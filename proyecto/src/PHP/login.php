@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-    <body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $db_host = 'localhost';
 $db_username = 'root';
@@ -15,51 +15,62 @@ if (!$conn) {
 
 session_start();
 
-if (!isset($_POST['email'])) {
-    header('Location: ../login.html');
-    exit();
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $correo = mysqli_real_escape_string($conn, $_POST['email']);
+    $contra = mysqli_real_escape_string($conn, $_POST['contra']);
 
-$email = $_POST['email'];
-$contra = $_POST['contra'];
+    // Verificar en la tabla registro (usuarios comunes)
+    $stmt = $conn->prepare("SELECT id, email, contra FROM registro WHERE email = ?");
+    $stmt->bind_param("s", $correo);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-$sql_admin = "SELECT * FROM registro WHERE email = '$email' AND contra = '$contra'";
-$result_admin = mysqli_query($conn, $sql_admin);
-$existe1 = mysqli_num_rows($result_admin);
-
-if ($existe1 > 0) {
-    while ($row = mysqli_fetch_array($result_admin)) {
-        if ($email == $row['email'] && $contra == $row['contra']) {
+    if ($row = $result->fetch_assoc()) {
+        if (password_verify($contra, $row['contra'])) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['id'] = $row['id'];
-            echo "
-            <script language='JavaScript'>
+
+            // Redirigir a la página de usuarios
+            echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: '¡Bienvenid@ a ParkNow!',
+                    title: '¡Inicio de sesión exitoso!',
+                    text: '¡Bienvenido!',
                     showConfirmButton: false,
                     timer: 2000
                 }).then(function() {
-                    window.location = '../index.php';
+                    window.location = '../index.php'; // URL para usuarios comunes
+                });
+            </script>";
+            exit();
+        } else {
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Contraseña incorrecta',
+                    text: '¡Vuelva a ingresar sus datos!',
+                }).then(function() {
+                    window.location = '../login.html'; // URL del formulario de inicio de sesión
                 });
             </script>";
         }
+    } else {
+        // Si no se encontró coincidencia en la tabla de usuarios comunes
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario no encontrado',
+                text: '¡Vuelva a ingresar sus datos!',
+            }).then(function() {
+                window.location = '../login.html'; // URL del formulario de inicio de sesión
+            });
+        </script>";
     }
-} else {
-    echo "
-    <script language='JavaScript'>
-        Swal.fire({
-            icon: 'error',
-            title: 'Su usuario o contraseña pueden estar incorrectos',
-            text: '¡Vuelva a ingresar sus datos!',
-        }).then(function() {
-            window.location = '../login.html';
-        });
-    </script>
-    ";
 }
 
 mysqli_close($conn);
 ?>
 </body>
 </html>
+
+
