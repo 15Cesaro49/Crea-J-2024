@@ -16,16 +16,13 @@
                 <img class="w-8 h-8 mr-2" src="../img/aparcamiento-de-coches.png" alt="logo">
                 ParkNow
             </a>
-            <div
-                class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <h1
-                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Inicia sesión con tu cuenta
                     </h1>
                     <!-- Formulario de inicio de sesión -->
-                    <form class="space-y-4 md:space-y-6" action="PHP/login.php" method="POST" autocomplete="off"
-                        onsubmit="return validateForm()">
+                    <form class="space-y-4 md:space-y-6" action="PHP/login.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
                         <!-- Campo para el correo electrónico -->
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo:</label>
@@ -33,13 +30,11 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="correo@gmail.com" required>
                             <!-- Mensaje de error para correo inválido -->
-                            <span id="email-error" class="text-red-500 text-sm hidden">Por favor, ingrese un correo
-                                electrónico válido.</span>
+                            <span id="email-error" class="text-red-500 text-sm hidden">Por favor, ingrese un correo electrónico válido.</span>
                         </div>
                         <!-- Campo para la contraseña -->
                         <div class="relative">
-                            <label
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña:</label>
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña:</label>
                             <div class="relative">
                                 <input type="password" name="contra" id="ver" placeholder="5 a 12 caracteres"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -50,8 +45,7 @@
                                     onclick="togglePasswordVisibility()">
                             </div>
                             <!-- Mensaje de error para contraseña inválida -->
-                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre
-                                5 y 12 caracteres, al menos una mayúscula y un signo especial.</span>
+                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 5 y 12 caracteres y solo letras y números.</span>
                         </div>
                         <!-- Script para la validación y visibilidad de la contraseña -->
                         <script>
@@ -74,7 +68,7 @@
                                 var passwordError = document.getElementById("password-error");
 
                                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                                var passwordPattern = /^[A-Za-z\d]{5,12}$/; // Nueva expresión regular para 5-12 caracteres sin signos especiales
+                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/; // Actualización de la expresión regular para solo letras y números
 
                                 var isValid = true;
 
@@ -96,7 +90,6 @@
 
                                 return isValid;
                             }
-
                         </script>
                         <!-- Botón para enviar el formulario -->
                         <button type="submit"
@@ -106,14 +99,12 @@
                         <!-- Enlace para ir a la página de registro -->
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                             ¿No tienes cuenta aún? <a href="registro.html"
-                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Regístrate
-                                ahora</a>
+                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Regístrate ahora</a>
                         </p>
                         <!-- Enlace para ir a la página de login de administrador -->
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                             ¿Eres administrador? <a href="login_ad.html"
-                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Ingresa
-                                ahora</a>
+                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Ingresa ahora</a>
                         </p>
                     </form>
                 </div>
