@@ -36,7 +36,7 @@ if ($existe1 > 0) {
             <script language='JavaScript'>
                 swal.fire({
                     icon: 'success',
-                    title: '¡Bienvenid@ a SaludRural Administrador!',
+                    title: '¡Bienvenid@ a ParkNow Administrador!',
                     showConfirmButton: false,
                     timer: 2000
                 }).then(function() {
