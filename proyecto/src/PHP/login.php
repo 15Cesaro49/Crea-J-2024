@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>";
         }
     } else {
-        // Si no se encontró coincidencia en la tabla de usuarios comunes
         echo "<script>
             Swal.fire({
                 icon: 'error',
@@ -72,5 +71,4 @@ mysqli_close($conn);
 ?>
 </body>
 </html>
-
 
