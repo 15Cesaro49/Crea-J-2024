@@ -36,11 +36,11 @@ if ($existe1 > 0) {
             <script language='JavaScript'>
                 swal.fire({
                     icon: 'success',
-                    title: '¡Bienvenid@ a ParkNow Administrador!',
+                    title: '¡Bienvenid@ a ParkNow!',
                     showConfirmButton: false,
                     timer: 2000
                 }).then(function() {
-                    window.location = '../crud-ad/index.php';
+                    window.location = '../index.php';
                 });
             </script>";
         }
