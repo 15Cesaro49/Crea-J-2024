@@ -17,109 +17,85 @@
                 <img class="w-8 h-8 mr-2" src="../img/aparcamiento-de-coches.png" alt="logo">
                 ParkNow
             </a>
-            <div
-                class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <h1
-                        class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Registro
                     </h1>
-                    <form class="space-y-4 md:space-y-6" action="PHP/registro.php" method="post"
-                        onsubmit="return validateForm()">
+                    <form class="space-y-4 md:space-y-6" action="PHP/registro.php" method="post" onsubmit="return validateForm()">
                         <!-- Campo para el nombre -->
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
-                            <!-- Input para el nombre, solo acepta letras -->
                             <input type="text" name="nombre" id="nombre"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Nombre" required>
-                            <!-- Mensaje de error si el nombre contiene caracteres no permitidos -->
-                            <span id="nombre-error" class="text-red-500 text-sm hidden">El nombre solo puede contener
-                                letras.</span>
+                            <span id="nombre-error" class="text-red-500 text-sm hidden">El nombre solo puede contener letras.</span>
                         </div>
 
                         <!-- Campo para el apellido -->
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido</label>
-                            <!-- Input para el apellido, solo acepta letras -->
                             <input type="text" name="apellido" id="apellido"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Apellido" required>
-                            <!-- Mensaje de error si el apellido contiene caracteres no permitidos -->
-                            <span id="apellido-error" class="text-red-500 text-sm hidden">El apellido solo puede
-                                contener letras.</span>
+                            <span id="apellido-error" class="text-red-500 text-sm hidden">El apellido solo puede contener letras.</span>
                         </div>
 
                         <!-- Campo para el correo electrónico -->
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo:</label>
-                            <!-- Input para el correo electrónico, validado para asegurar que tiene un formato correcto -->
                             <input type="email" name="email" id="email"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="correo@gmail.com" required>
-                            <!-- Mensaje de error si el correo no es válido -->
-                            <span id="email-error" class="text-red-500 text-sm hidden">Por favor, ingrese un correo
-                                electrónico válido.</span>
+                            <span id="email-error" class="text-red-500 text-sm hidden">Por favor, ingrese un correo electrónico válido.</span>
                         </div>
 
                         <!-- Campo para la contraseña -->
                         <div class="relative">
-                            <label
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
                             <div class="relative">
-                                <!-- Input para la contraseña, se puede mostrar u ocultar usando el icono -->
                                 <input type="password" name="password" id="ver" placeholder="5-12 caracteres"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     required>
-                                <!-- Icono para mostrar/ocultar la contraseña -->
                                 <img id="togglePassword"
                                     class="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
                                     src="../img/ojofoto.png" width="30px" alt="Mostrar/ocultar contraseña"
                                     onclick="togglePasswordVisibility()">
                             </div>
-                            <!-- Mensaje de error si la contraseña no cumple con los requisitos -->
-                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre
-                                5 y 12 caracteres, al menos una mayúscula y un signo especial.</span>
+                            <span id="password-error" class="text-red-500 text-sm hidden">La contraseña debe tener entre 5 y 12 caracteres y solo letras y números.</span>
                         </div>
 
                         <!-- Script para manejar la visibilidad de la contraseña y validar el formulario -->
                         <script>
-                            // Función para mostrar u ocultar la contraseña
                             function togglePasswordVisibility() {
                                 var passwordInput = document.getElementById("ver");
                                 var togglePassword = document.getElementById("togglePassword");
-                                // Cambia el tipo de input entre 'password' y 'text'
                                 if (passwordInput.type === "password") {
                                     passwordInput.type = "text";
-                                    togglePassword.src = "../img/ojoabierto.png"; // Cambia la imagen cuando se muestre la contraseña
+                                    togglePassword.src = "../img/ojoabierto.png";
                                 } else {
                                     passwordInput.type = "password";
-                                    togglePassword.src = "../img/ojofoto.png"; // Cambia la imagen cuando se oculte la contraseña
+                                    togglePassword.src = "../img/ojofoto.png";
                                 }
                             }
 
-                            // Función para validar el formulario antes de enviarlo
                             function validateForm() {
-                                // Obtener los valores de los inputs
                                 var nombreInput = document.getElementById("nombre");
                                 var apellidoInput = document.getElementById("apellido");
                                 var emailInput = document.getElementById("email");
                                 var passwordInput = document.getElementById("ver");
 
-                                // Obtener los elementos de error
                                 var nombreError = document.getElementById("nombre-error");
                                 var apellidoError = document.getElementById("apellido-error");
                                 var emailError = document.getElementById("email-error");
                                 var passwordError = document.getElementById("password-error");
 
-                                // Definir los patrones de validación
-                                var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/; // Solo letras, incluyendo acentos y ñ
-                                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Validar el formato del correo
-                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/; // Contraseña de 5 a 12 caracteres que acepta letras y números
+                                var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/;
+                                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/;
 
-                                var isValid = true; // Bandera para verificar si todo es válido
+                                var isValid = true;
 
-                                // Validar el campo de nombre
                                 if (!namePattern.test(nombreInput.value)) {
                                     nombreError.classList.remove("hidden");
                                     nombreInput.focus();
@@ -128,7 +104,6 @@
                                     nombreError.classList.add("hidden");
                                 }
 
-                                // Validar el campo de apellido
                                 if (!namePattern.test(apellidoInput.value)) {
                                     apellidoError.classList.remove("hidden");
                                     apellidoInput.focus();
@@ -137,7 +112,6 @@
                                     apellidoError.classList.add("hidden");
                                 }
 
-                                // Validar el campo de correo electrónico
                                 if (!emailPattern.test(emailInput.value)) {
                                     emailError.classList.remove("hidden");
                                     emailInput.focus();
@@ -146,7 +120,6 @@
                                     emailError.classList.add("hidden");
                                 }
 
-                                // Validar el campo de contraseña
                                 if (!passwordPattern.test(passwordInput.value)) {
                                     passwordError.classList.remove("hidden");
                                     passwordInput.focus();
@@ -155,32 +128,22 @@
                                     passwordError.classList.add("hidden");
                                 }
 
-                                // Si todo es válido, se envía el formulario
                                 return isValid;
                             }
-
-
                         </script>
 
-                        <!-- Botón de envío del formulario -->
                         <button type="submit"
                             class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                             Sign in
                         </button>
-                        <!-- Enlace para los usuarios que ya tienen cuenta -->
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                            ¿Ya tienes cuenta? <a href="login.html"
-                                class="font-medium text-primary-600 hover:underline dark:text-primary-500">Ingresa
-                                Ahora</a>
+                            ¿Ya tienes cuenta? <a href="login.html" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Ingresa Ahora</a>
                         </p>
                     </form>
-
-
                 </div>
             </div>
         </div>
     </section>
-
 </body>
 
 </html>
