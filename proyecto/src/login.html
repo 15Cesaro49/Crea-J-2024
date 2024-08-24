@@ -22,7 +22,7 @@
                         Inicia sesión con tu cuenta
                     </h1>
                     <!-- Formulario de inicio de sesión -->
-                    <form class="space-y-4 md:space-y-6" action="PHP/login.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
+                    <form class="space-y-4 md:space-y-6" action="PHP/login_user.php" method="POST" autocomplete="off" onsubmit="return validateForm()">
                         <!-- Campo para el correo electrónico -->
                         <div>
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo:</label>
@@ -68,7 +68,7 @@
                                 var passwordError = document.getElementById("password-error");
 
                                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/; // Actualización de la expresión regular para solo letras y números
+                                // Actualización de la expresión regular para solo letras y números
 
                                 var isValid = true;
 
@@ -80,14 +80,7 @@
                                     emailError.classList.add("hidden");
                                 }
 
-                                if (!passwordPattern.test(passwordInput.value)) {
-                                    passwordError.classList.remove("hidden");
-                                    passwordInput.focus();
-                                    isValid = false;
-                                } else {
-                                    passwordError.classList.add("hidden");
-                                }
-
+                                
                                 return isValid;
                             }
                         </script>

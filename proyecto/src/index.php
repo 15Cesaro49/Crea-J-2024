@@ -1,12 +1,14 @@
 <?php
 session_start();
-if (!isset($_SESSION['email'])) {
-    header('location:login.html');
+
+// Verificar si el usuario está autenticado
+if (!isset($_SESSION['user_email'])) {
+    header("Location: login.html");
     exit();
 }
 
 // Aquí obtienes el nombre del usuario desde la sesión o la base de datos
-$nombre_usuario = $_SESSION['email']; // Asumiendo que guardaste el nombre del usuario en la sesión
+$nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre del usuario en la sesión
 ?>
 <!doctype html>
 <html>

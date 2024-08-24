@@ -64,43 +64,28 @@
                             }
                         }
                 
-                        // Función para validar el formulario antes de enviarlo
                         function validateForm() {
-                            // Obtiene los valores de los inputs
-                            var emailInput = document.getElementById("email");
-                            var passwordInput = document.getElementById("ver");
-                
-                            // Obtiene los elementos donde se mostrarán los errores
-                            var emailError = document.getElementById("email-error");
-                            var passwordError = document.getElementById("password-error");
-                
-                            // Define los patrones de validación
-                            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Valida el formato del correo
-                            var passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,12}$/; // Valida que la contraseña tenga entre 1 y 12 caracteres, con al menos una mayúscula y un signo especial
-                
-                            var isValid = true; // Bandera para verificar si todo es válido
-                
-                            // Validación del campo de correo electrónico
-                            if (!emailPattern.test(emailInput.value)) { // Si el correo no coincide con el patrón
-                                emailError.classList.remove("hidden"); // Muestra el mensaje de error
-                                emailInput.focus(); // Focaliza en el input del correo
-                                isValid = false; // Indica que hay un error
-                            } else {
-                                emailError.classList.add("hidden"); // Oculta el mensaje de error si el correo es válido
+                                var emailInput = document.getElementById("email");
+                                var passwordInput = document.getElementById("ver");
+                                var emailError = document.getElementById("email-error");
+                                var passwordError = document.getElementById("password-error");
+
+                                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                                // Actualización de la expresión regular para solo letras y números
+
+                                var isValid = true;
+
+                                if (!emailPattern.test(emailInput.value)) {
+                                    emailError.classList.remove("hidden");
+                                    emailInput.focus();
+                                    isValid = false;
+                                } else {
+                                    emailError.classList.add("hidden");
+                                }
+
+                                
+                                return isValid;
                             }
-                
-                            // Validación del campo de contraseña
-                            if (!passwordPattern.test(passwordInput.value)) { // Si la contraseña no coincide con el patrón
-                                passwordError.classList.remove("hidden"); // Muestra el mensaje de error
-                                passwordInput.focus(); // Focaliza en el input de la contraseña
-                                isValid = false; // Indica que hay un error
-                            } else {
-                                passwordError.classList.add("hidden"); // Oculta el mensaje de error si la contraseña es válida
-                            }
-                
-                            // Retorna false si hay algún error, lo que previene el envío del formulario
-                            return isValid;
-                        }
                     </script>
                 
                     <!-- Botón para enviar el formulario -->

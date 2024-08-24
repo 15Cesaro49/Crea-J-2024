@@ -3,7 +3,7 @@
 $servername = "localhost"; // Nombre del servidor MySQL
 $username = "root"; // Nombre de usuario de la base de datos
 $password = ""; // Contraseña de la base de datos
-$database = "crea"; // Nombre de la base de datos
+$database = "parknowdb"; // Nombre de la base de datos
 
 // Parámetros de paginación
 $results_per_page = 6; // Número de resultados por página

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "crea";
+$dbname = "parknowdb";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

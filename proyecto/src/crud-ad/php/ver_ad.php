@@ -3,7 +3,7 @@
 $servername = "localhost"; // Nombre del servidor MySQL
 $username = "root"; // Nombre de usuario de la base de datos
 $password = ""; // Contraseña de la base de datos
-$database = "crea"; // Nombre de la base de datos
+$database = "parknowdb"; // Nombre de la base de datos
 
 // Parámetros de paginación
 $results_per_page = 6; // Número de resultados por página
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<tr>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['nombre']) . '</td>';
-        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['email']) . '</td>';
+        echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['correo']) . '</td>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">' . htmlspecialchars($row['fecha_registro']) . '</td>';
         echo '<td class="px-6 py-4 whitespace-no-wrap border-b border-gray-300 dark:border-gray-700">';
         echo '<form method="POST" style="display:inline-block;">';

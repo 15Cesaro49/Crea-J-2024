@@ -3,18 +3,8 @@
     <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'crea';
-$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
-
-if (!$conn) {
-    die("Error de la conexion a la base de datos". mysqli_connect_error());
-}
-
 session_start();
-
+include('db_connection.php'); 
 if (!isset($_POST['email'])) {
     header('location:../login.html');
 }

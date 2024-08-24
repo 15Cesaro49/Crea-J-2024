@@ -3,19 +3,7 @@
     <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-// Datos de conexión a la base de datos
-$servername = "localhost"; // o el nombre de tu servidor
-$username = "root"; // tu usuario de MySQL
-$password = ""; // tu contraseña de MySQL
-$dbname = "crea"; // el nombre de tu base de datos
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include('db_connection.php'); 
 
 // Recibir y sanitizar datos del formulario
 $nombre = $conn->real_escape_string(htmlspecialchars($_POST['nombre']));

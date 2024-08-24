@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['email'])) {
-    header('location:login.html');
+if (!isset($_SESSION['user_email'])) {
+    header("Location: login.html");
     exit();
 }
 
 // Configura la conexión a la base de datos
 $host = 'localhost'; // Cambia esto según tu configuración
-$dbname = 'crea'; // Cambia esto según tu configuración
+$dbname = 'parknowdb'; // Cambia esto según tu configuración
 $username = 'root'; // Cambia esto según tu configuración
 $password = ''; // Cambia esto según tu configuración
 
@@ -20,7 +20,7 @@ try {
 }
 
 // Obtén el email del usuario desde la sesión
-$email = $_SESSION['email'];
+$email = $_SESSION['user_email'];
 
 try {
     // Prepara y ejecuta la consulta para obtener los datos del usuario
