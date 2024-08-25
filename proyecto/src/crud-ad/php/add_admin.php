@@ -3,18 +3,7 @@
     <body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-// Conexión a la base de datos
-$servername = "localhost"; // Cambiar si es necesario
-$username = "root";        // Cambiar si es necesario
-$password = "";            // Cambiar si es necesario
-$dbname = "parknowdb";       // Nombre de tu base de datos
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+include('db_connection.php');
 
 // Obtener datos del formulario
 $email = $_POST['email'];

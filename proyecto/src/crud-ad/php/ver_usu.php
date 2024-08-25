@@ -1,10 +1,5 @@
 <?php
-// Configuración de la conexión a la base de datos
-$servername = "localhost"; // Nombre del servidor MySQL
-$username = "root"; // Nombre de usuario de la base de datos
-$password = ""; // Contraseña de la base de datos
-$database = "parknowdb"; // Nombre de la base de datos
-
+include('db_connection.php');
 // Parámetros de paginación
 $results_per_page = 6; // Número de resultados por página
 
