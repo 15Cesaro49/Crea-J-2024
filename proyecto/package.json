@@ -1,6 +1,7 @@
 {
   "scripts": {
-  "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
+  "start": "node server.js"
 },
   "devDependencies": {
     "daisyui": "^4.12.2",
