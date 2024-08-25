@@ -21,6 +21,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
     <link href="output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="">
