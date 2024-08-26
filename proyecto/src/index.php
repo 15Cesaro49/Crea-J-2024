@@ -111,7 +111,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                                         d="M19.5 13.5C19.5 13.2348 19.3946 12.9804 19.2071 12.7929C19.0196 12.6054 18.7652 12.5 18.5 12.5H12.5V11.5H14.5C14.7652 11.5 15.0196 11.3946 15.2071 11.2071C15.3946 11.0196 15.5 10.7652 15.5 10.5V6.5C15.5 6.23478 15.3946 5.98043 15.2071 5.79289C15.0196 5.60536 14.7652 5.5 14.5 5.5H9.5C9.23478 5.5 8.98043 5.60536 8.79289 5.79289C8.60536 5.98043 8.5 6.23478 8.5 6.5V10.5C8.5 10.7652 8.60536 11.0196 8.79289 11.2071C8.98043 11.3946 9.23478 11.5 9.5 11.5H11.5V12.5H5.5C5.23478 12.5 4.98043 12.6054 4.79289 12.7929C4.60536 12.9804 4.5 13.2348 4.5 13.5V18.5C4.5 18.7652 4.60536 19.0196 4.79289 19.2071C4.98043 19.3946 5.23478 19.5 5.5 19.5H18.5C18.7652 19.5 19.0196 19.3946 19.2071 19.2071C19.3946 19.0196 19.5 18.7652 19.5 18.5V13.5ZM7 13.5H17V17.5H7V13.5ZM10 9.5V7.5H14V9.5H10ZM12 2C11.7348 2 11.4804 2.10536 11.2929 2.29289C11.1054 2.48043 11 2.73478 11 3V4H13V3C13 2.73478 12.8946 2.48043 12.7071 2.29289C12.5196 2.10536 12.2652 2 12 2ZM4 9.5C4 9.76522 4.10536 10.0196 4.29289 10.2071C4.48043 10.3946 4.73478 10.5 5 10.5C5.26522 10.5 5.51957 10.3946 5.70711 10.2071C5.89464 10.0196 6 9.76522 6 9.5V8.5H4V9.5ZM18 10.5C18.2652 10.5 18.5196 10.3946 18.7071 10.2071C18.8946 10.0196 19 9.76522 19 9.5V8.5H17V9.5C17 9.76522 17.1054 10.0196 17.2929 10.2071C17.4804 10.3946 17.7348 10.5 18 10.5Z"
                                         fill="currentColor"></path>
                                 </svg>
-                                <span class="mx-1">Cerrar sesion</span>
+                                <span class="mx-1"></span>
                             </a>
                         </div>
                     </div>
@@ -156,13 +156,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                 <div class="lg:pr-4">
                     <div class="lg:max-w-lg">
                         <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">ParkNow</h1>
-                        <p class="mt-6 text-xl leading-8 text-gray-700"> Busca tu estacionamiento con nosotros, somos
-                            una
-                            alternativa fácil y rápida. Encuentra estacionamientos cercanos a tu ubicación, reserva con
-                            anticipación,
-                            y disfruta de una experiencia de estacionamiento sin estrés. Con nuestro sistema de reservas
-                            en línea,
-                            puedes encontrar el lugar perfecto para estacionar tu vehículo, ya sea para un evento, una
+                        <p class="mt-6 text-xl leading-8 text-gray-700"> Busca tu estacionamiento con nosotros, somos una alternativa fácil y rápida. Encuentra estacionamientos cercanos a tu ubicación, reserva con anticipación, y disfruta de una experiencia de estacionamiento sin estrés. Con nuestro sistema de reservas en línea, puedes encontrar el lugar perfecto para estacionar tu vehículo, ya sea para un evento, una
                             cita, o
                             simplemente para hacer tus compras diarias. ¡Deja atrás la preocupación por encontrar un
                             lugar para
@@ -180,8 +174,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                     <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
                         <p>Nuestro sistema te permite explorar una amplia gama de opciones de estacionamiento, desde
                             estacionamientos públicos hasta estacionamientos privados en edificios y complejos
-                            residenciales. Además,
-                            puedes filtrar tus resultados según tus preferencias, como la distancia desde tu ubicación,
+                            residenciales. Además, puedes filtrar tus resultados según tus preferencias, como la distancia desde tu ubicación,
                             el precio, y
                             las comodidades ofrecidas, para encontrar el estacionamiento perfecto que se adapte a tus
                             necesidades.</p>
