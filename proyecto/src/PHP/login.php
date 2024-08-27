@@ -44,7 +44,7 @@
                 <script language='JavaScript'>
                     swal.fire({
                         icon: 'success',
-                        title: '¡Bienvenid@ a ParkNow Administrador!',
+                        title: '¡Bienvenid@ a ParkNow !',
                         showConfirmButton: false,
                         timer: 2000
                     }).then(function() {
