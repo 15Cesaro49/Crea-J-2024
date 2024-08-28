@@ -50,41 +50,58 @@
                         </div>
                         <!-- Script para la validación y visibilidad de la contraseña -->
                         <script>
+                            // Esta función alterna la visibilidad de la contraseña en un campo de entrada.
                             function togglePasswordVisibility() {
+                                // Obtiene el elemento de entrada de contraseña con el id "ver".
                                 var passwordInput = document.getElementById("ver");
+                                // Obtiene el elemento de imagen que se usa para mostrar el ícono de alternancia de visibilidad de la contraseña.
                                 var togglePassword = document.getElementById("togglePassword");
+                                
+                                // Verifica el tipo actual del campo de entrada.
                                 if (passwordInput.type === "password") {
+                                    // Si el tipo es 'password', cambia a 'text' para mostrar la contraseña.
                                     passwordInput.type = "text";
+                                    // Cambia la imagen del ícono a un ojo abierto.
                                     togglePassword.src = "../img/ojoabierto.png";
                                 } else {
+                                    // Si el tipo no es 'password' (es 'text'), cambia a 'password' para ocultar la contraseña.
                                     passwordInput.type = "password";
+                                    // Cambia la imagen del ícono a un ojo cerrado.
                                     togglePassword.src = "../img/ojofoto.png";
                                 }
                             }
-
+                        
+                            // Esta función valida el formulario de inicio de sesión.
                             function validateForm() {
+                                // Obtiene los campos de entrada .
                                 var emailInput = document.getElementById("email");
                                 var passwordInput = document.getElementById("ver");
                                 var emailError = document.getElementById("email-error");
                                 var passwordError = document.getElementById("password-error");
-
+                        
+                                // Define una expresión regular para validar el formato del correo electrónico.
                                 var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                                // Actualización de la expresión regular para solo letras y números
-
+                                // Actualización de la expresión regular para asegurar que el correo tenga el formato correcto.
+                        
+                                // Inicializa una variable para indicar si el formulario es válido.
                                 var isValid = true;
-
+                        
+                                // Verifica si el correo electrónico ingresado coincide con el patrón.
                                 if (!emailPattern.test(emailInput.value)) {
+                                    // Si el formato del correo electrónico no es válido, muestra el mensaje de error y enfoca el campo de correo.
                                     emailError.classList.remove("hidden");
                                     emailInput.focus();
                                     isValid = false;
                                 } else {
+                                    // Si el formato del correo electrónico es válido, oculta el mensaje de error.
                                     emailError.classList.add("hidden");
                                 }
-
-                                
+                        
+                                // Devuelve el estado de validez del formulario.
                                 return isValid;
                             }
                         </script>
+                        
                         <!-- Botón para enviar el formulario -->
                         <button type="submit"
                             class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
