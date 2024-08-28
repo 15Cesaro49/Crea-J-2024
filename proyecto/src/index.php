@@ -121,15 +121,22 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
     </nav>
 
     <script>
-        function openMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.classList.contains("hidden")) {
-                menu.classList.remove("hidden");
-            } else {
-                menu.classList.add("hidden");
-            }
+    // Define la función openMenu que alterna la visibilidad del menú.
+    function openMenu() {
+        // Obtiene el elemento del DOM con el id 'menu' y lo asigna a la variable 'menu'.
+        var menu = document.getElementById("menu");
+        
+        // Verifica si el elemento tiene la clase 'hidden'.
+        if (menu.classList.contains("hidden")) {
+            // Si el menú está oculto (tiene la clase 'hidden'), elimina esta clase para mostrar el menú.
+            menu.classList.remove("hidden");
+        } else {
+            // Si el menú está visible (no tiene la clase 'hidden'), agrega la clase 'hidden' para ocultarlo.
+            menu.classList.add("hidden");
         }
-    </script>
+    }
+</script>
+
 
     <div class="overflow-hidden bg-gray-200 px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
         <div class="absolute inset-0 -z-10 overflow-hidden">
