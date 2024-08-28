@@ -1,44 +1,59 @@
 <?php
+// Inicia o reanuda una sesión existente para poder acceder a las variables de sesión.
 session_start();
+
+// Verifica si el usuario está autenticado comprobando la existencia de 'user_email' en la sesión.
 if (!isset($_SESSION['user_email'])) {
+    // Si el usuario no está autenticado, redirige a la página de inicio de sesión.
     header("Location: login.html");
-    exit();
+    exit(); // Detiene la ejecución del script después de la redirección.
 }
 
-// Configura la conexión a la base de datos
-$host = 'localhost'; // Cambia esto según tu configuración
-$dbname = 'parknowdb'; // Cambia esto según tu configuración
-$username = 'root'; // Cambia esto según tu configuración
-$password = ''; // Cambia esto según tu configuración
+// Configura los parámetros de conexión a la base de datos.
+$host = 'localhost'; 
+$dbname = 'parknowdb'; 
+$username = 'root'; 
+$password = ''; 
 
+// Intenta establecer una conexión a la base de datos usando PDO.
 try {
+    // Crea una nueva instancia de PDO para conectar con la base de datos.
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    // Configura PDO para que lance excepciones en caso de errores.
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
+    // Captura cualquier excepción de PDO y muestra un mensaje de error.
     echo 'Error de conexión: ' . $e->getMessage();
-    exit();
+    exit(); // Detiene la ejecución del script en caso de error de conexión.
 }
 
-// Obtén el email del usuario desde la sesión
+// Obtén el correo electrónico del usuario desde la variable de sesión.
 $email = $_SESSION['user_email'];
 
 try {
-    // Prepara y ejecuta la consulta para obtener los datos del usuario
+    // Prepara una consulta SQL para obtener los datos del usuario a partir del correo electrónico.
     $stmt = $pdo->prepare("SELECT nombre, apellido FROM registro WHERE email = :email");
+    // Asocia el parámetro :email con el valor del correo electrónico del usuario.
     $stmt->bindParam(':email', $email);
+    // Ejecuta la consulta preparada.
     $stmt->execute();
 
+    // Obtén los datos del usuario como un array asociativo.
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Verifica si se encontraron datos del usuario.
     if (!$user) {
+        // Si no se encontraron datos, muestra un mensaje de error.
         echo 'Usuario no encontrado.';
-        exit();
+        exit(); // Detiene la ejecución del script si el usuario no se encuentra.
     }
 } catch (PDOException $e) {
+    // Captura cualquier excepción de PDO durante la consulta y muestra un mensaje de error.
     echo 'Error de consulta: ' . $e->getMessage();
-    exit();
+    exit(); // Detiene la ejecución del script en caso de error de consulta.
 }
 ?>
+
 <!doctype html>
 <html>
 
