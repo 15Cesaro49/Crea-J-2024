@@ -12,7 +12,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     // Si hay un error en la conexión, se ejecuta este bloque
     die("Connection failed: " . $conn->connect_error);
-    // Si la conexión falla, se muestra un mensaje de error y se termina la ejecución del 
+    // Si la conexión falla, se muestra un mensaje de error y se termina la ejecución del script
 }
 ?>
 
