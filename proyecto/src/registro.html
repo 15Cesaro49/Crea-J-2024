@@ -68,70 +68,98 @@
 
                         <!-- Script para manejar la visibilidad de la contraseña y validar el formulario -->
                         <script>
+                            // Esta función alterna la visibilidad de la contraseña y el ícono correspondiente.
                             function togglePasswordVisibility() {
+                                // Obtiene el elemento del campo de entrada de contraseña con el id 'ver'.
                                 var passwordInput = document.getElementById("ver");
+                                // Obtiene el elemento de imagen para el ícono de visibilidad de la contraseña.
                                 var togglePassword = document.getElementById("togglePassword");
+                                
+                                // Verifica el tipo actual del campo de entrada de contraseña.
                                 if (passwordInput.type === "password") {
+                                    // Si el campo es de tipo 'password', cambia a 'text' para mostrar la contraseña.
                                     passwordInput.type = "text";
+                                    // Cambia la imagen del ícono a un ojo abierto para indicar que la contraseña está visible.
                                     togglePassword.src = "../img/ojoabierto.png";
                                 } else {
+                                    // Si el campo es de tipo 'text', cambia a 'password' para ocultar la contraseña.
                                     passwordInput.type = "password";
+                                    // Cambia la imagen del ícono a un ojo cerrado para indicar que la contraseña está oculta.
                                     togglePassword.src = "../img/ojofoto.png";
                                 }
                             }
-
+                        
+                            // Esta función valida el formulario de registro.
                             function validateForm() {
+                                // Obtiene los campos de entrada del formulario.
                                 var nombreInput = document.getElementById("nombre");
                                 var apellidoInput = document.getElementById("apellido");
                                 var emailInput = document.getElementById("email");
                                 var passwordInput = document.getElementById("ver");
-
+                        
+                                // Obtiene los elementos de error asociados a cada campo de entrada.
                                 var nombreError = document.getElementById("nombre-error");
                                 var apellidoError = document.getElementById("apellido-error");
                                 var emailError = document.getElementById("email-error");
                                 var passwordError = document.getElementById("password-error");
-
-                                var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/;
-                                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/;
-
+                        
+                                // Define los patrones de validación para cada campo.
+                                var namePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/; // Solo letras y espacios, soporta caracteres especiales de español.
+                                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; // Patrón para un correo electrónico válido.
+                                var passwordPattern = /^[A-Za-z0-9]{5,12}$/; // Contraseña debe ser entre 5 y 12 caracteres alfanuméricos.
+                        
+                                // Inicializa una variable para determinar si el formulario es válido.
                                 var isValid = true;
-
+                        
+                                // Valida el campo de nombre.
                                 if (!namePattern.test(nombreInput.value)) {
+                                    // Si el valor del nombre no cumple con el patrón, muestra el mensaje de error y enfoca el campo.
                                     nombreError.classList.remove("hidden");
                                     nombreInput.focus();
                                     isValid = false;
                                 } else {
+                                    // Si el valor es válido, oculta el mensaje de error.
                                     nombreError.classList.add("hidden");
                                 }
-
+                        
+                                // Valida el campo de apellido.
                                 if (!namePattern.test(apellidoInput.value)) {
+                                    // Si el valor del apellido no cumple con el patrón, muestra el mensaje de error y enfoca el campo.
                                     apellidoError.classList.remove("hidden");
                                     apellidoInput.focus();
                                     isValid = false;
                                 } else {
+                                    // Si el valor es válido, oculta el mensaje de error.
                                     apellidoError.classList.add("hidden");
                                 }
-
+                        
+                                // Valida el campo de correo electrónico.
                                 if (!emailPattern.test(emailInput.value)) {
+                                    // Si el valor del correo electrónico no cumple con el patrón, muestra el mensaje de error y enfoca el campo.
                                     emailError.classList.remove("hidden");
                                     emailInput.focus();
                                     isValid = false;
                                 } else {
+                                    // Si el valor es válido, oculta el mensaje de error.
                                     emailError.classList.add("hidden");
                                 }
-
+                        
+                                // Valida el campo de contraseña.
                                 if (!passwordPattern.test(passwordInput.value)) {
+                                    // Si el valor de la contraseña no cumple con el patrón, muestra el mensaje de error y enfoca el campo.
                                     passwordError.classList.remove("hidden");
                                     passwordInput.focus();
                                     isValid = false;
                                 } else {
+                                    // Si el valor es válido, oculta el mensaje de error.
                                     passwordError.classList.add("hidden");
                                 }
-
+                        
+                                // Devuelve true si todos los campos son válidos; false en caso contrario.
                                 return isValid;
                             }
                         </script>
+                        
 
                         <button type="submit"
                             class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
