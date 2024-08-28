@@ -121,16 +121,23 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
         </div>
     </nav>
 
-    <script>
+        <script>
+        // Define la función openMenu para alternar la visibilidad del menú.
         function openMenu() {
+            // Obtiene el elemento del DOM con el id 'menu' y lo almacena en la variable 'menu'.
             var menu = document.getElementById("menu");
+
+            // Verifica si el elemento 'menu' tiene la clase 'hidden', que indica que está oculto.
             if (menu.classList.contains("hidden")) {
+                // Si el menú está oculto, elimina la clase 'hidden' para mostrar el menú.
                 menu.classList.remove("hidden");
             } else {
+                // Si el menú está visible, agrega la clase 'hidden' para ocultarlo.
                 menu.classList.add("hidden");
             }
         }
     </script>
+
 
 <section class="bg-gray-200">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
