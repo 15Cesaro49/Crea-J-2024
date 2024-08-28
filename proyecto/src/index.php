@@ -63,6 +63,8 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                             x-transition:leave="transition ease-in duration-100"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90"
                             class="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800">
+
+                            <!-- Usuario -->
                             <a href="#"
                                 class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <img class="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9"
@@ -78,6 +80,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
 
                             <hr class="border-gray-200 dark:border-gray-700">
 
+                            <!-- Ver perfil -->
                             <a href="perfil.php"
                                 class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none"
@@ -92,6 +95,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                                 <span class="mx-1">Ver perfil</span>
                             </a>
 
+                            <!-- Ajustes -->
                             <a href="#"
                                 class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none"
@@ -103,6 +107,7 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                                 <span class="mx-1">Ajustes</span>
                             </a>
 
+                            <!-- Cerrar sesión -->
                             <a href="PHP/logout.php"
                                 class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none"
@@ -111,7 +116,17 @@ $nombre_usuario = $_SESSION['user_email']; // Asumiendo que guardaste el nombre 
                                         d="M19.5 13.5C19.5 13.2348 19.3946 12.9804 19.2071 12.7929C19.0196 12.6054 18.7652 12.5 18.5 12.5H12.5V11.5H14.5C14.7652 11.5 15.0196 11.3946 15.2071 11.2071C15.3946 11.0196 15.5 10.7652 15.5 10.5V6.5C15.5 6.23478 15.3946 5.98043 15.2071 5.79289C15.0196 5.60536 14.7652 5.5 14.5 5.5H9.5C9.23478 5.5 8.98043 5.60536 8.79289 5.79289C8.60536 5.98043 8.5 6.23478 8.5 6.5V10.5C8.5 10.7652 8.60536 11.0196 8.79289 11.2071C8.98043 11.3946 9.23478 11.5 9.5 11.5H11.5V12.5H5.5C5.23478 12.5 4.98043 12.6054 4.79289 12.7929C4.60536 12.9804 4.5 13.2348 4.5 13.5V18.5C4.5 18.7652 4.60536 19.0196 4.79289 19.2071C4.98043 19.3946 5.23478 19.5 5.5 19.5H18.5C18.7652 19.5 19.0196 19.3946 19.2071 19.2071C19.3946 19.0196 19.5 18.7652 19.5 18.5V13.5ZM7 13.5H17V17.5H7V13.5ZM10 9.5V7.5H14V9.5H10ZM12 2C11.7348 2 11.4804 2.10536 11.2929 2.29289C11.1054 2.48043 11 2.73478 11 3V4H13V3C13 2.73478 12.8946 2.48043 12.7071 2.29289C12.5196 2.10536 12.2652 2 12 2ZM4 9.5C4 9.76522 4.10536 10.0196 4.29289 10.2071C4.48043 10.3946 4.73478 10.5 5 10.5C5.26522 10.5 5.51957 10.3946 5.70711 10.2071C5.89464 10.0196 6 9.76522 6 9.5V8.5H4V9.5ZM18 10.5C18.2652 10.5 18.5196 10.3946 18.7071 10.2071C18.8946 10.0196 19 9.76522 19 9.5V8.5H17V9.5C17 9.76522 17.1054 10.0196 17.2929 10.2071C17.4804 10.3946 17.7348 10.5 18 10.5Z"
                                         fill="currentColor"></path>
                                 </svg>
-                                <span class="mx-1"></span>
+                                <span class="mx-1">Cerrar Sesión</span>
+                            </a>
+
+                            <!-- Traducir al inglés -->
+                            <a href="#"
+                                class="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <svg class="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4V10L16 6L20 10V4H12ZM12 14V20L16 16L20 20V14H12Z" fill="currentColor"></path>
+                                </svg>
+                                <span class="mx-1">Traducir al inglés</span>
                             </a>
                         </div>
                     </div>
